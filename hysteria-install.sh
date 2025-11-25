@@ -286,6 +286,8 @@ install_server_core() {
       fi
 
       rm -f "$_tmpfile"
+
+      mkdir /etc/hysteria
     }
 
     perform_install_hysteria_systemd() {
