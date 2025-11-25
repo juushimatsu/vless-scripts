@@ -184,6 +184,10 @@ install_server_core() {
       esac
     }
 
+    update_packages() {
+      ${PACKAGE_UPDATE[int]}
+    }
+
     check_environment_curl() {
       if has_command curl; then
         return
@@ -206,6 +210,7 @@ install_server_core() {
     }
 
     check_environment() {
+      update_packages
       check_environment_operating_system
       check_environment_architecture
       check_environment_systemd
@@ -411,14 +416,6 @@ start_service() {
 }
 
 show_config() {
-    echo
-    green "=== Конфигурация Hysteria2 ==="
-    echo
-    yellow "Файл конфигурации сохранен в: /root/hysteria2.txt"
-    echo
-    red "$(cat /root/hysteria2.txt)"
-    echo
-    
     if command -v qrencode &> /dev/null; then
         green "=== QR Code ==="
         qrencode -t ANSIUTF8 "$(cat /root/hysteria2.txt)"
@@ -473,8 +470,11 @@ main() {
     yellow "Перезапуск службы: systemctl restart hysteria-server"
     yellow "Проверка статуса: systemctl status hysteria-server"
     echo
-    yellow "Ссылка конфигурации:"
+    yellow "Hysteria2 ключ:"
     cat /root/hysteria2.txt
+    echo
+    plain "Инструкции по настройке VPN приложений:"
+    plain "https://github.com/YukiKras/wiki/blob/main/nastroikavpn.md"
 }
 
 main

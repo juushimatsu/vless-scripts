@@ -300,7 +300,7 @@ echo -e "Логин:        \033[1;33m${USERNAME}\033[0m" >&3
 echo -e "Пароль:       \033[1;33m${PASSWORD}\033[0m" >&3
 
 echo -e "\nИнструкции по настройке VPN приложений вы сможете найти здесь:" >&3
-echo -e "\033[1;34mhttps://wiki.yukikras.net/ru/nastroikavpn\033[0m" >&3
+echo -e "\033[1;34mhttps://github.com/YukiKras/wiki/blob/main/nastroikavpn.md\033[0m" >&3
 
 echo -e "\nВсе данные сохранены в файл: \033[1;36m/root/3x-ui.txt\033[0m" >&3
 echo -e "Для повторного просмотра информации используйте команду:" >&3
@@ -315,5 +315,5 @@ echo -e "" >&3
   echo "Пароль:        ${PASSWORD}"
   echo ""
   echo "Инструкции по настройке VPN приложений:"
-  echo "https://wiki.yukikras.net/ru/nastroikavpn"
+  echo "https://github.com/YukiKras/wiki/blob/main/nastroikavpn.md"
 } >> /root/3x-ui.txt
