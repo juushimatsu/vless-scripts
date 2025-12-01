@@ -342,7 +342,7 @@ configure_hysteria() {
     
     local sni_host="web.max.ru"
     local masquerade_url="web.max.ru"
-    local port="443"
+    local port="8443"
     
     local auth_pwd=$(date +%s%N | md5sum | cut -c 1-16)
     local obfs_pwd=$(date +%s%N | md5sum | cut -c 1-16)
